@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ppal {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Maquina maquina = new Maquina(new Ticket(2.5));
         String aux;
         int opcion;
@@ -24,20 +24,20 @@ public class Ppal {
             System.out.println("4. Operario");
             System.out.println("0. Salir");
 
-            aux = scanner.nextLine();
+            aux = sc.nextLine();
             opcion = Integer.parseInt(aux);
 
             switch (opcion) {
                 case 1:
                     System.out.println("Ingrese la cantidad de billetes a comprar:");
-                    aux = scanner.nextLine();
+                    aux = sc.nextLine();
                     cantidad = Integer.parseInt(aux);
                     maquina.comprarBilletes(cantidad);
                     break;
 
                 case 2:
                     System.out.println("Ingrese el monto pagado:");
-                    aux = scanner.nextLine();
+                    aux = sc.nextLine();
                     montoPagado = Double.parseDouble(aux);
                     System.out.println("Cambio a devolver: $" + maquina.calcularCambio(montoPagado));
                     break;
@@ -48,9 +48,9 @@ public class Ppal {
 
                 case 4:
                     System.out.println("Ingrese la contraseña de operario:");
-                    contraseña = scanner.nextLine();
+                    contraseña = sc.nextLine();
                     if (maquina.comprobarContraseña(contraseña)) {
-                        menuOperario(maquina, scanner);
+                        menuOperario(maquina, sc);
                     } else {
                         System.out.println("Contraseña incorrecta. Acceso denegado.");
                     }
@@ -67,19 +67,20 @@ public class Ppal {
         } while (opcion!=0);
     }
 
-    private static void menuOperario(Maquina maquina, Scanner scanner) {
+    private static void menuOperario(Maquina maquina, Scanner sc) {
         String aux;
         int opcion;
         double nuevoPrecio;
 
         do {
             System.out.println("\nMenú de Operario:");
+            System.out.println("-".repeat(30));
             System.out.println("1. Consultar saldo total");
             System.out.println("2. Reiniciar contador de saldo total");
             System.out.println("3. Cambiar precio de billete");
             System.out.println("0. Volver al menú principal");
 
-            aux = scanner.nextLine();
+            aux = sc.nextLine();
             opcion = Integer.parseInt(aux);
 
             switch (opcion) {
@@ -94,7 +95,7 @@ public class Ppal {
 
                 case 3:
                     System.out.println("Ingrese el nuevo precio de billete:");
-                    aux = scanner.nextLine();
+                    aux = sc.nextLine();
                     nuevoPrecio = Double.parseDouble(aux);
                     maquina.cambiarPrecioBillete(nuevoPrecio);
                     break;
