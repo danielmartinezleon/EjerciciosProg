@@ -1,26 +1,22 @@
 package ejercicio10;
 
 public class Ticket {
+    private double precio;
 
-	private double precio;
+    public Ticket(double precio) {
+        this.precio = precio;
+    }
 
-	public Ticket(double precio) {
-		this.precio = precio;
-	}
+    public double getPrecio() {
+        return precio;
+    }
 
-	public double getPrecio() {
-		return precio;
-	}
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
 
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
-
-	@Override
-	public String toString() {
-		return "Ticket [precio=" + precio + "]";
-	}
-	
-	
-	
+    @Override
+    public String toString() {
+        return "Ticket [precio=" + precio + "]";
+    }
 }
