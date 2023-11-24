@@ -4,15 +4,18 @@ import java.util.Scanner;
 
 public class Ppal {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Maquina maquina = new Maquina(new Ticket(2.5));
-        String aux;
         int opcion;
         int cantidad;
-        double montoPagado;
+        double dineroPagado;
         String contraseña;
         double nuevoPrecio;
+        double precioTicket = 2.5;
+        Ticket t = new Ticket(precioTicket);
+        Maquina maquina = new Maquina(t, 0, 0.0, "12345");
+        String aux;
+      
 
         System.out.println("Bienvenido a Metro Sevilla");
         do {
@@ -23,7 +26,8 @@ public class Ppal {
             System.out.println("3. Imprimir ticket");
             System.out.println("4. Operario");
             System.out.println("0. Salir");
-
+            System.out.println("-".repeat(30));
+            
             aux = sc.nextLine();
             opcion = Integer.parseInt(aux);
 
@@ -36,10 +40,10 @@ public class Ppal {
                     break;
 
                 case 2:
-                    System.out.println("Ingrese el monto pagado:");
+                    System.out.println("Ingrese el dinero pagado:");
                     aux = sc.nextLine();
-                    montoPagado = Double.parseDouble(aux);
-                    System.out.println("Cambio a devolver: $" + maquina.calcularCambio(montoPagado));
+                    dineroPagado = Double.parseDouble(aux);
+                    System.out.printf("Cambio a devolver: %.2f€", maquina.calcularCambio(dineroPagado));
                     break;
 
                 case 3:
@@ -65,49 +69,51 @@ public class Ppal {
                     break;
             }
         } while (opcion!=0);
+        System.out.println("Gracias por usar el programa");
     }
 
-    private static void menuOperario(Maquina maquina, Scanner sc) {
-        String aux;
-        int opcion;
-        double nuevoPrecio;
+	private static void menuOperario(Maquina maquina, Scanner sc) {
+		String aux;
+		int opcion;
+		double nuevoPrecio;
 
-        do {
-            System.out.println("\nMenú de Operario:");
-            System.out.println("-".repeat(30));
-            System.out.println("1. Consultar saldo total");
-            System.out.println("2. Reiniciar contador de saldo total");
-            System.out.println("3. Cambiar precio de billete");
-            System.out.println("0. Volver al menú principal");
+		do {
+			System.out.println("\nMenú de Operario:");
+			System.out.println("-".repeat(30));
+			System.out.println("1. Consultar saldo total");
+			System.out.println("2. Reiniciar contador de saldo total");
+			System.out.println("3. Cambiar precio de billete");
+			System.out.println("0. Volver al menú principal");
+			System.out.println("-".repeat(30));
 
-            aux = sc.nextLine();
-            opcion = Integer.parseInt(aux);
+			aux = sc.nextLine();
+			opcion = Integer.parseInt(aux);
 
-            switch (opcion) {
-                case 1:
-                    System.out.println("Saldo total: $" + maquina.getSaldoTotal());
-                    break;
+			switch (opcion) {
+			case 1:
+				System.out.printf("Saldo total: %.2f€\n", maquina.getSaldoTotal());
+				break;
 
-                case 2:
-                    maquina.reiniciarSaldoTotal();
-                    System.out.println("Contador de saldo total reiniciado.");
-                    break;
+			case 2:
+				maquina.reiniciarSaldoTotal();
+				System.out.println("Contador de saldo total reiniciado.");
+				break;
 
-                case 3:
-                    System.out.println("Ingrese el nuevo precio de billete:");
-                    aux = sc.nextLine();
-                    nuevoPrecio = Double.parseDouble(aux);
-                    maquina.cambiarPrecioBillete(nuevoPrecio);
-                    break;
+			case 3:
+				System.out.println("Ingrese el nuevo precio de billete:");
+				aux = sc.nextLine();
+				nuevoPrecio = Double.parseDouble(aux);
+				maquina.cambiarPrecioBillete(nuevoPrecio);
+				break;
 
-                case 4:
-                	System.out.println("Volviendo...");
-                    return;
+			case 0:
+				System.out.println("Volviendo...");
+				return;
 
-                default:
-                    System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
-                    break;
-            }
-        } while (opcion!=0);
-    }
+			default:
+				System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+				break;
+			}
+		} while (opcion != 0);
+	}
 }

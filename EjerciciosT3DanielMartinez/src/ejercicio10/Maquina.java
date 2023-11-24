@@ -4,12 +4,17 @@ public class Maquina {
     private Ticket t;
     private int cant;
     private double precioTotal;
+    private String password;
+    
+    
+    public Maquina(Ticket t, int cant, double precioTotal, String password) {
+		this.t = t;
+		this.cant = cant;
+		this.precioTotal = precioTotal;
+		this.password = password;
+	}
 
-    public Maquina(Ticket t) {
-        this.t = t;
-    }
-
-    public Ticket getT() {
+	public Ticket getT() {
         return t;
     }
 
@@ -17,18 +22,42 @@ public class Maquina {
         this.t = t;
     }
 
-    public void comprarBilletes(int cantidad) {
-        this.cant += cantidad;
-        this.precioTotal += t.getPrecio() * cantidad;
+    public int getCant() {
+		return cant;
+	}
+
+	public void setCant(int cant) {
+		this.cant = cant;
+	}
+
+	public double getPrecioTotal() {
+		return precioTotal;
+	}
+
+	public void setPrecioTotal(double precioTotal) {
+		this.precioTotal = precioTotal;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void comprarBilletes(int cantidad) {
+        cant += cantidad;
+        precioTotal += t.getPrecio() * cantidad;
         System.out.println(cantidad + " billete(s) comprado(s) correctamente.");
     }
 
-    public double calcularCambio(double montoPagado) {
-        return montoPagado - precioTotal;
+    public double calcularCambio(double dineroPagado) {
+        return dineroPagado - precioTotal;
     }
 
     public void imprimirTicket() {
-        System.out.println("Ticket válido para " + cant + " persona(s). Total a pagar: $" + precioTotal);
+        System.out.printf("Ticket válido para %d persona(s). Total a pagar: %.2f€\n", cant, precioTotal);
     }
 
     public double getSaldoTotal() {
@@ -42,10 +71,10 @@ public class Maquina {
 
     public void cambiarPrecioBillete(double nuevoPrecio) {
         t.setPrecio(nuevoPrecio);
-        System.out.println("Precio de billete actualizado a $" + nuevoPrecio);
+        System.out.printf("Precio de billete actualizado a %.2f€\n", nuevoPrecio);
     }
 
     public boolean comprobarContraseña(String input) {
-        return input.equals("tucontraseña");
+        return input.equalsIgnoreCase(password);
     }
 }
