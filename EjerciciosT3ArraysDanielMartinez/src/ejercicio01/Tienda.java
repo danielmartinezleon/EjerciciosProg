@@ -53,5 +53,13 @@ public class Tienda {
 			System.out.println(lista[i]);
 		}
 	}
-
+	
+	public boolean comprobarFragil(Producto p) {
+		if(p.isFragil()) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 }
