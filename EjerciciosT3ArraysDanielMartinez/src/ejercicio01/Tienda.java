@@ -5,13 +5,13 @@ import java.util.Arrays;
 public class Tienda {
 
 	private Producto[] lista;
-	private double pvp;
 	private int numProd;
+	private double inversion;
 
-	public Tienda(Producto[] lista, double pvp, int numProd) {
+	public Tienda(Producto[] lista, int numProd, double inversion) {
 		this.lista = lista;
-		this.pvp = pvp;
 		this.numProd = numProd;
+		this.inversion = inversion;
 	}
 
 	public Producto[] getLista() {
@@ -22,12 +22,12 @@ public class Tienda {
 		this.lista = lista;
 	}
 
-	public double getPvp() {
-		return pvp;
+	public double getInversion() {
+		return inversion;
 	}
 
-	public void setPvp(double pvp) {
-		this.pvp = pvp;
+	public void setInversion(double inversion) {
+		this.inversion = inversion;
 	}
 
 	public int getNumProd() {
@@ -40,26 +40,35 @@ public class Tienda {
 
 	@Override
 	public String toString() {
-		return "Tienda [lista=" + Arrays.toString(lista) + ", pvp=" + pvp + ", numProd=" + numProd + "]";
+		return "Tienda [lista=" + Arrays.toString(lista) + ", numProd=" + numProd + ", inversion=" + inversion + "]";
 	}
 
 	public void agregar(Producto p) {
 		lista[numProd] = p;
 		numProd++;
 	}
-	
+
 	public void imprimirLista() {
 		for (int i = 0; i < lista.length; i++) {
 			System.out.println(lista[i]);
 		}
 	}
-	
+
 	public boolean comprobarFragil(Producto p) {
-		if(p.isFragil()) {
+		if (p.isFragil()) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
+
+	public double calcularInversion() {
+		for (int i = 0; i < lista.length; i++) {
+			inversion+=lista[i].getpBase();
+		}
+		return inversion;
+	}
 	
+	
+
 }

@@ -5,14 +5,14 @@ public class Producto {
 	private double pBase;
 	private String nombre;
 	private boolean fragil;
-	private String caducidad;
+	private double pvp;
 	private int id;
 	
-	public Producto(double pBase, String nombre, boolean fragil, String caducidad, int id) {
+	public Producto(double pBase, String nombre, boolean fragil, double pvp, int id) {
 		this.pBase = pBase;
 		this.nombre = nombre;
 		this.fragil = fragil;
-		this.caducidad = caducidad;
+		this.pvp = pvp;
 		this.id = id;
 	}
 
@@ -40,12 +40,12 @@ public class Producto {
 		this.fragil = fragil;
 	}
 
-	public String getCaducidad() {
-		return caducidad;
+	public double getPvp() {
+		return pvp;
 	}
 
-	public void setCaducidad(String caducidad) {
-		this.caducidad = caducidad;
+	public void setPvp(double pvp) {
+		this.pvp = pvp;
 	}
 
 	public int getId() {
@@ -58,9 +58,11 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Producto [pBase=" + pBase + ", nombre=" + nombre + ", fragil=" + fragil + ", caducidad=" + caducidad
-				+ ", id=" + id + "]";
+		return "Producto [pBase=" + pBase + ", nombre=" + nombre + ", fragil=" + fragil + ", pvp=" + pvp + ", id=" + id
+				+ "]";
 	}
+
+	
 	
 	
 	
