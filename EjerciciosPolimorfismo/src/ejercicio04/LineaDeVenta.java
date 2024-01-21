@@ -54,11 +54,11 @@ public class LineaDeVenta {
 	}
 	
 	public void imprimirLineaDeVenta() {
-		System.out.println("-"+producto.getNombre()+"        "+cantidad+"        "+subtotal);
+		System.out.println("-"+producto.getNombre()+"		"+cantidad+"		"+subtotal);
 		
 		if(producto instanceof Alimentacion) {
 			if(((Alimentacion)producto).comprobarCaducidad(producto)) {
-				System.out.println("A "+producto.getNombre()+" le faltan 2 días para caducar");
+				System.out.println("A "+producto.getNombre()+" le faltan menos de 2 días para caducar");
 			};
 		}
 	}

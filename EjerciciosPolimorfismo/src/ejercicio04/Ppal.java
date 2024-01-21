@@ -5,7 +5,7 @@ public class Ppal {
 	public static void main(String[] args) {
 		
 		int tam = 3;
-		Producto p1 = new Alimentacion(5.5, "patatas", 1, 2);
+		Producto p1 = new Alimentacion(5.5, "patatas", 1, 1);
 		Producto p2 = new Alimentacion(3, "peras", 2, 3);
 		Producto p3 = new Electronica(200, "Mac", 3, 20);
 		

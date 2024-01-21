@@ -11,6 +11,8 @@ public class Venta {
 	}
 
 	public void imprimirTicket() {
+		System.out.println("Producto |		 Cantidad		 | Subtotal");
+		System.out.println("-".repeat(60));
 		for (int i = 0; i < ticket.length; i++) {
 			ticket[i].imprimirLineaDeVenta();
 		}
