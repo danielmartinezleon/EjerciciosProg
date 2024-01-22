@@ -12,14 +12,12 @@ public class Ppal {
         cuentas[0]= cuentaCorriente;
         cuentas[1]= cuentaJoven;
         cuentas[2]= cuentaEmpresa;
-
+        
+        Oficina ofi = new Oficina(cuentas);
         
         cuentaCorriente.ingresar(cuentaCorriente, 200);
         cuentaJoven.ingresar(cuentaJoven, 100);
         cuentaEmpresa.reintegrar(cuentaEmpresa, 300);
-        
-        Oficina ofi = new Oficina(cuentas);
-
        
         System.out.println("Total dinero en la oficina: " + ofi.calcularTotalOficina());
         System.out.println("Ganancias por comisiones de cuentas empresa: " + ofi.calcularGananciasEmpresas());

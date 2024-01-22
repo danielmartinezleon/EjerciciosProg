@@ -23,18 +23,26 @@ public class CuentaJoven extends Cuenta{
 	}
 	
 	public double ingresar(Cuenta c, int cantidad) {
-		c.setSaldo(c.getSaldo()+cantidad);
-		regaloIngreso++;
+		if (c instanceof CuentaJoven) {
+			c.setSaldo(c.getSaldo()+cantidad);
+			regaloIngreso++;
+		}
 		return c.getSaldo();
 	}
 	
 	public double reintegrar(Cuenta c, int cantidad) {
-		c.setSaldo(c.getSaldo()-cantidad);
+		if (c instanceof CuentaJoven) {
+			c.setSaldo(c.getSaldo()-cantidad);
+		}
 		return c.getSaldo();
 	}
 	
 	public double calcularTotal(Cuenta c) {
-		return c.getSaldo()+regaloIngreso;
+		double tot = 0;
+		if (c instanceof CuentaJoven)
+		tot = c.getSaldo()+regaloIngreso;
+		
+		return tot;
 	}
 	
 	
