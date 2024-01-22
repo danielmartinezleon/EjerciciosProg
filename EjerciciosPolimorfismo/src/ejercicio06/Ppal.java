@@ -22,6 +22,13 @@ public class Ppal {
         System.out.println("Total dinero en la oficina: " + ofi.calcularTotalOficina());
         System.out.println("Impuestos pagados por sacar del cajero: " + ofi.calcularGananciasEmpresas());
         System.out.println("Regalos por ingresos en cuentas joven: " + ofi.calcularTotalRegalado());
+        System.out.println("-".repeat(60));
+        cuentaCorriente.calcularTotal(cuentaCorriente);
+        cuentaJoven.calcularTotal(cuentaJoven);
+        cuentaEmpresa.calcularTotal(cuentaEmpresa);
+        System.out.println("Saldo cuenta corriente: "+cuentaCorriente.getSaldo());
+        System.out.println("Saldo cuenta jove: "+cuentaJoven.getSaldo());
+        System.out.println("Saldo cuenta empresa: "+cuentaEmpresa.getSaldo());
 
 	}
 
