@@ -20,7 +20,7 @@ public class Ppal {
         cuentaEmpresa.reintegrar(cuentaEmpresa, 300);
        
         System.out.println("Total dinero en la oficina: " + ofi.calcularTotalOficina());
-        System.out.println("Ganancias por comisiones de cuentas empresa: " + ofi.calcularGananciasEmpresas());
+        System.out.println("Impuestos pagados por sacar del cajero: " + ofi.calcularGananciasEmpresas());
         System.out.println("Regalos por ingresos en cuentas joven: " + ofi.calcularTotalRegalado());
 
 	}

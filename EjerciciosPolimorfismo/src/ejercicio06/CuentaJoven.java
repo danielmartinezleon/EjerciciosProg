@@ -40,7 +40,9 @@ public class CuentaJoven extends Cuenta{
 	public double calcularTotal(Cuenta c) {
 		double tot = 0;
 		if (c instanceof CuentaJoven)
-		tot = c.getSaldo()+regaloIngreso;
+		c.setSaldo(c.getSaldo()+regaloIngreso);
+		
+		tot = c.getSaldo();
 		
 		return tot;
 	}

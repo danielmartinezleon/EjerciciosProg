@@ -34,7 +34,13 @@ public class CuentaEmpresa extends Cuenta{
 	}
 
 	public double calcularTotal(Cuenta c) {
-		return c.getSaldo()-impuesto;
+		double tot = 0;
+		if (c instanceof CuentaEmpresa)
+		c.setSaldo(c.getSaldo()-impuesto);
+		
+		tot = c.getSaldo();
+		
+		return tot;
 	}
 
 }

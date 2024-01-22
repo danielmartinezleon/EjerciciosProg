@@ -18,6 +18,14 @@ public class Oficina {
 		double totOficina = 0;
 		
 		for (int i = 0; i < cuentas.length; i++) {
+			if (cuentas[i] instanceof CuentaCorriente) {
+				((CuentaCorriente)cuentas[i]).calcularTotal();
+			}else if (cuentas[i] instanceof CuentaJoven) {
+				((CuentaJoven)cuentas[i]).calcularTotal();
+			}else if (cuentas[i] instanceof CuentaEmpresa) {
+				((CuentaEmpresa)cuentas[i]).calcularTotal();
+			}
+			
 			totOficina+=cuentas[i].getSaldo();
 		}
 		
@@ -28,7 +36,7 @@ public class Oficina {
 		double totRegalado = 0;
 		for (int i = 0; i < cuentas.length; i++) {
 			if (cuentas[i] instanceof CuentaJoven) {
-				totRegalado+=1;
+				totRegalado+= ((CuentaJoven)cuentas[i]).getRegaloIngreso();
 				}
 			}
 		
