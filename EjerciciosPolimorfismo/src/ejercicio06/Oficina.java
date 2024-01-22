@@ -5,9 +5,8 @@ public class Oficina {
 	private Cuenta[] cuentas;
 	private int cantCuentas;
 
-	public Oficina(Cuenta[] cuentas, int cantCuentas) {
+	public Oficina(Cuenta[] cuentas) {
 		this.cuentas = cuentas;
-		this.cantCuentas = cantCuentas;
 	}
 	
 	public void add(Cuenta c) {
