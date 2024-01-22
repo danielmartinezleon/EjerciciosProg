@@ -22,6 +22,21 @@ public class CuentaJoven extends Cuenta{
 		return "CuentaJoven [regaloIngreso=" + regaloIngreso + "]";
 	}
 	
+	public double ingresar(Cuenta c, int cantidad) {
+		c.setSaldo(c.getSaldo()+cantidad);
+		regaloIngreso++;
+		return c.getSaldo();
+	}
+	
+	public double reintegrar(Cuenta c, int cantidad) {
+		c.setSaldo(c.getSaldo()-cantidad);
+		return c.getSaldo();
+	}
+	
+	public double calcularTotal(Cuenta c) {
+		return c.getSaldo()+regaloIngreso;
+	}
+	
 	
 
 }

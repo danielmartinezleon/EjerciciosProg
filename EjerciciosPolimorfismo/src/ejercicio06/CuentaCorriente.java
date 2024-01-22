@@ -43,8 +43,8 @@ public class CuentaCorriente extends Cuenta{
 		return c.getSaldo();
 	}
 	
-	public double calcularTotal() {
-		return 0;
+	public double calcularTotal(Cuenta c) {
+		return c.getSaldo()-mantenimiento;
 	}
 
 

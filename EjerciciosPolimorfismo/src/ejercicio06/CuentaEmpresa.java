@@ -22,6 +22,19 @@ public class CuentaEmpresa extends Cuenta{
 		return "CuentaEmpresa [impuesto=" + impuesto + "]";
 	}
 	
+	public double ingresar(Cuenta c, int cantidad) {
+		c.setSaldo(c.getSaldo()+cantidad);
+		return c.getSaldo();
+	}
 	
+	public double reintegrar(Cuenta c, int cantidad) {
+		c.setSaldo(c.getSaldo()-cantidad);
+		impuesto++;
+		return c.getSaldo();
+	}
+
+	public double calcularTotal(Cuenta c) {
+		return c.getSaldo()-impuesto;
+	}
 
 }
