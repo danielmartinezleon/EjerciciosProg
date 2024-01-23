@@ -18,7 +18,6 @@ public class Principal {
 		double regaloJoven = 0;
 		double totalRegalado = 0;
 		double mantenimiento = 0;
-		double totalSucursal = 0;
 		double operar = 0;
 		Cuenta[] cuentas;
 		Cuenta c1;
@@ -162,9 +161,7 @@ public class Principal {
 				ofi.imprimirCuentas();
 				break;
 			case 8:
-				totalSucursal = 0;
-				totalSucursal += ofi.calcularTotalOficina();
-				System.out.printf("El total de dinero en la sucursal es: %.2f€\n", totalSucursal);
+				System.out.printf("El total de dinero en la sucursal es: %.2f€\n", ofi.calcularTotalOficina());
 				break;
 			case 0:
 				System.out.println("Gracias y buen día");
