@@ -29,16 +29,16 @@ public class CuentaCorriente extends Cuenta{
 
 	@Override
 	public String toString() {
-		return "CuentaCorriente [mantenimiento=" + mantenimiento + ", puntos=" + puntos + "]";
+		return "CuentaCorriente ["+super.toString()+" puntos=" + puntos + "]";
 	}
 	
-	public double ingresar(Cuenta c, int cantidad) {
+	public double ingresar(Cuenta c, double cantidad) {
 		c.setSaldo(c.getSaldo()+cantidad);
 		puntos++;
 		return c.getSaldo();
 	}
 	
-	public double reintegrar(Cuenta c, int cantidad) {
+	public double reintegrar(Cuenta c, double cantidad) {
 		c.setSaldo(c.getSaldo()-cantidad);
 		return c.getSaldo();
 	}

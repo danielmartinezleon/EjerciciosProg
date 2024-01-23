@@ -19,24 +19,23 @@ public class CuentaEmpresa extends Cuenta{
 
 	@Override
 	public String toString() {
-		return "CuentaEmpresa [impuesto=" + impuesto + "]";
+		return "CuentaEmpresa ["+super.toString()+ "]";
 	}
 	
-	public double ingresar(Cuenta c, int cantidad) {
+	public double ingresar(Cuenta c, double cantidad) {
 		c.setSaldo(c.getSaldo()+cantidad);
 		return c.getSaldo();
 	}
 	
-	public double reintegrar(Cuenta c, int cantidad) {
-		c.setSaldo(c.getSaldo()-cantidad);
-		impuesto++;
+	public double reintegrar(Cuenta c, double cantidad) {
+		c.setSaldo(c.getSaldo()-cantidad-impuesto);
 		return c.getSaldo();
 	}
 
 	public double calcularTotal(Cuenta c) {
 		double tot = 0;
 		if (c instanceof CuentaEmpresa)
-		c.setSaldo(c.getSaldo()-impuesto);
+		c.setSaldo(c.getSaldo());
 		
 		tot = c.getSaldo();
 		

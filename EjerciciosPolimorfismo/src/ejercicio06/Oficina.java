@@ -26,7 +26,9 @@ public class Oficina {
 				((CuentaEmpresa)cuentas[i]).calcularTotal();
 			}
 			
-			totOficina+=cuentas[i].getSaldo();
+			if(cuentas[i] != null) {
+				totOficina+=cuentas[i].getSaldo();
+			}
 		}
 		
 		return totOficina;
@@ -43,7 +45,7 @@ public class Oficina {
 		return totRegalado;
 	}
 	
-	 public double calcularGananciasEmpresas() {
+	 public double calcularImpuestosEmpresas() {
 	        double gananciasEmpresas = 0;
 	        for (int i = 0; i < cuentas.length; i++) {
 	            if (cuentas[i] instanceof CuentaEmpresa) {
@@ -53,4 +55,18 @@ public class Oficina {
 	        return gananciasEmpresas;
 
 }
+	 public void imprimirSaldo() {
+		 for (int i = 0; i < cuentas.length; i++) {
+				if(cuentas[i] != null) {
+					System.out.println("nº de cuenta: "+((Cuenta)cuentas[i]).getNumCuenta()+"\n"
+							+ "saldo: "+((Cuenta)cuentas[i]).getSaldo());
+				}
+			}
+	 }
+	 public void imprimirCuentas() {
+		 for (int i = 0; i < cuentas.length; i++) {
+				if(cuentas[i] != null)
+				System.out.println(i+1+". "+cuentas[i]);
+			}
+	 }
 }

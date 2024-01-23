@@ -28,7 +28,7 @@ public abstract class Cuenta {
 
 	@Override
 	public String toString() {
-		return "Cuenta [numCuenta=" + numCuenta + ", saldo=" + saldo + "]";
+		return "numCuenta=" + numCuenta + ", saldo=" + saldo;
 	}
 	
 	public double ingresar() {

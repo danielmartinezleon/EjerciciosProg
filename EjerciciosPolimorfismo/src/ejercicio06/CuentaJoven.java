@@ -17,20 +17,23 @@ public class CuentaJoven extends Cuenta{
 		this.regaloIngreso = regaloIngreso;
 	}
 
+
+
+	
 	@Override
 	public String toString() {
-		return "CuentaJoven [regaloIngreso=" + regaloIngreso + "]";
+		return "CuentaJoven ["+super.toString()+ "]";
 	}
-	
-	public double ingresar(Cuenta c, int cantidad) {
+
+	public double ingresar(Cuenta c, double cantidad) {
 		if (c instanceof CuentaJoven) {
-			c.setSaldo(c.getSaldo()+cantidad);
-			regaloIngreso++;
+			c.setSaldo(c.getSaldo()+cantidad+regaloIngreso);
+			
 		}
 		return c.getSaldo();
 	}
 	
-	public double reintegrar(Cuenta c, int cantidad) {
+	public double reintegrar(Cuenta c, double cantidad) {
 		if (c instanceof CuentaJoven) {
 			c.setSaldo(c.getSaldo()-cantidad);
 		}
@@ -40,7 +43,7 @@ public class CuentaJoven extends Cuenta{
 	public double calcularTotal(Cuenta c) {
 		double tot = 0;
 		if (c instanceof CuentaJoven)
-		c.setSaldo(c.getSaldo()+regaloIngreso);
+		c.setSaldo(c.getSaldo());
 		
 		tot = c.getSaldo();
 		
