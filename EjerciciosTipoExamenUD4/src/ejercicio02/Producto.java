@@ -1,17 +1,25 @@
 package ejercicio02;
 
-public abstract class Producto {
+public abstract class Producto implements IVenta{
 	
+	private int id;
 	private double precioBase;
 	private int cantidad;
 	private String nombre;
-	private boolean vendido;
 	
-	public Producto(double precioBase, int cantidad, String nombre, boolean vendido) {
+	public Producto(int id, double precioBase, int cantidad, String nombre) {
+		this.id = id;
 		this.precioBase = precioBase;
 		this.cantidad = cantidad;
 		this.nombre = nombre;
-		this.vendido = vendido;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public double getPrecioBase() {
@@ -38,22 +46,16 @@ public abstract class Producto {
 		this.nombre = nombre;
 	}
 
-	public boolean isVendido() {
-		return vendido;
-	}
-
-	public void setVendido(boolean vendido) {
-		this.vendido = vendido;
-	}
-
 	@Override
 	public String toString() {
-		return "Producto [precioBase=" + precioBase + ", cantidad=" + cantidad + ", nombre=" + nombre + ", vendido="
-				+ vendido + "]";
+		return "Producto [id=" + id + ", precioBase=" + precioBase + ", cantidad=" + cantidad + ", nombre=" + nombre
+				+ "]";
+	}
+	
+	public double calcularPVP(double porcentaje) {
+		return 0;
 	}
 	
 	
 	
-	
-
 }
