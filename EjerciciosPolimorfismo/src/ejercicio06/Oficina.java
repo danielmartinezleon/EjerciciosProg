@@ -55,18 +55,4 @@ public class Oficina {
 	        return gananciasEmpresas;
 
 }
-	 public void imprimirSaldo() {
-		 for (int i = 0; i < cuentas.length; i++) {
-				if(cuentas[i] != null) {
-					System.out.println("nº de cuenta: "+((Cuenta)cuentas[i]).getNumCuenta()+"\n"
-							+ "saldo: "+((Cuenta)cuentas[i]).getSaldo());
-				}
-			}
-	 }
-	 public void imprimirCuentas() {
-		 for (int i = 0; i < cuentas.length; i++) {
-				if(cuentas[i] != null)
-				System.out.println(i+1+". "+cuentas[i]);
-			}
-	 }
 }

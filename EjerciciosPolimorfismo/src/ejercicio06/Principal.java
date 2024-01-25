@@ -104,7 +104,7 @@ public class Principal {
 				operar=Double.parseDouble(aux);
 				
 				System.out.println("¿A qué cuenta desea ingresarlo?");
-				ofi.imprimirCuentas();
+				imprimirCuentas(cuentas);
 				aux=sc.nextLine();
 				opcion=Integer.parseInt(aux);
 				
@@ -126,7 +126,7 @@ public class Principal {
 				operar=Double.parseDouble(aux);
 				
 				System.out.println("¿A qué cuenta desea reintegrarlo?");
-				ofi.imprimirCuentas();
+				imprimirCuentas(cuentas);
 				aux=sc.nextLine();
 				opcion=Integer.parseInt(aux);
 				
@@ -158,7 +158,7 @@ public class Principal {
 				break;
 			case 7:
 				//ofi.imprimirSaldo();
-				ofi.imprimirCuentas();
+				imprimirCuentas(cuentas);
 				break;
 			case 8:
 				System.out.printf("El total de dinero en la sucursal es: %.2f€\n", ofi.calcularTotalOficina());
@@ -176,4 +176,21 @@ public class Principal {
 
 	}
 
+	/*
+	 * public static void imprimirSaldo(Cuenta [] cuentas) {
+		 for (int i = 0; i < cuentas.length; i++) {
+				if(cuentas[i] != null) {
+					System.out.println("nº de cuenta: "+((Cuenta)cuentas[i]).getNumCuenta()+"\n"
+							+ "saldo: "+((Cuenta)cuentas[i]).getSaldo());
+				}
+			}
+	 }
+*/
+	
+	public static void imprimirCuentas(Cuenta [] cuentas) {
+		 for (int i = 0; i < cuentas.length; i++) {
+				if(cuentas[i] != null)
+				System.out.println(i+1+". "+cuentas[i]);
+			}
+	 }
 }
