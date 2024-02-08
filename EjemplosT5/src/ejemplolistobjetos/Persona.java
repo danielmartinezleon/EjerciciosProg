@@ -6,12 +6,14 @@ public class Persona {
 	private int edad;
 	private double altura;
 	private double peso;
+	private String dni;
 	
-	public Persona(String nombre, int edad, double altura, double peso) {
+	public Persona(String nombre, int edad, double altura, double peso, String dni) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.altura = altura;
 		this.peso = peso;
+		this.dni = dni;
 	}
 
 	public String getNombre() {
@@ -46,10 +48,20 @@ public class Persona {
 		this.peso = peso;
 	}
 
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
 	@Override
 	public String toString() {
-		return "Persona [nombre=" + nombre + ", edad=" + edad + ", altura=" + altura + ", peso=" + peso + "]";
+		return "Persona [nombre=" + nombre + ", edad=" + edad + ", altura=" + altura + ", peso=" + peso + ", dni=" + dni
+				+ "]";
 	}
+
 	
 	
 }
