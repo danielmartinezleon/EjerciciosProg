@@ -1,5 +1,7 @@
 package ejemploset;
 
+import java.util.Objects;
+
 public class Persona {
 
 	private String nombre;
@@ -40,6 +42,24 @@ public class Persona {
 	public String toString() {
 		return "Persona [nombre=" + nombre + ", dni=" + dni + ", edad=" + edad + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(dni, edad, nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return Objects.equals(dni, other.dni) && edad == other.edad && Objects.equals(nombre, other.nombre);
+	}
+	
 	
 	
 }
