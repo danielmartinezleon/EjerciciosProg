@@ -37,14 +37,42 @@ public class Agenda {
 	}
 	
 	public void editarNombre(String nombre, String nuevoNombre) {
-		findByNombre(nombre).setNombre(nuevoNombre);
-	}
+        Contacto contacto = findByNombre(nombre);
+        if (contacto != null) {
+            contacto.setNombre(nuevoNombre);
+            System.out.println("El nombre de " + nombre + " ha cambiado a " + nuevoNombre);
+        } else {
+            System.out.println("El contacto con el nombre " + nombre + " no existe en la agenda.");
+        }
+    }
 	
 	public void eliminarContacto(String nombre) {
-		listado.remove(findByNombre(nombre));
+		//listado.remove(findByNombre(nombre));
+		Contacto contacto = findByNombre(nombre);
+		if (contacto != null) {
+			listado.remove(contacto);
+			System.out.println("Contacto eliminado");
+		}else {
+			System.out.println("El contacto "+nombre+" no existe en la agenda");
+		}
 	}
 	
-	public void mostrarLista() {
-		
+	public void imprimirAgenda() {
+        System.out.println("AGENDA:");
+        for (Map.Entry<Contacto, Integer> entry : listado.entrySet()) {
+            Contacto contacto = entry.getKey();
+            Integer telefono = entry.getValue();
+            System.out.println("Nombre: " + contacto.getNombre() + ", Teléfono: " + telefono);
+        }
+    }
+	
+	public void imprimirUnContacto(String nombre) {
+		Contacto contacto = findByNombre(nombre);
+		if (contacto != null) {
+			System.out.println(contacto);
+		}else {
+			System.out.println("El contacto "+nombre+" no existe en la agenda");
+		}
 	}
+
 }
