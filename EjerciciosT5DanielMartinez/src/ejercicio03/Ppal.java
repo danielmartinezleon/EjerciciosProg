@@ -20,9 +20,9 @@ public class Ppal {
 		Curso cur = new Curso(ca);
 		Alumno a;
 
-		ca.agregarAlumno(new Alumno("Nydia", "Lopez Montero", 3, 9));
-		ca.agregarAlumno(new Alumno("Daniel", "Martinez Leon", 1, 8.5));
-		ca.agregarAlumno(new Alumno("Francisco", "Mejias Gonzalez", 5, 6));
+		ca.agregarAlumno(new Alumno("Ángel", "Naranjo", 3, 9));
+		ca.agregarAlumno(new Alumno("Daniel", "Martinez", 1, 8.5));
+		ca.agregarAlumno(new Alumno("Paco", "Perez", 5, 6));
 
 		do {
 			System.out.println("""

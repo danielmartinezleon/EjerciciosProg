@@ -14,7 +14,7 @@ public class Ppal {
 		listado.put(6, new Alumno("Daniel", 1, 6.8));
 		listado.put(7, a);
 		System.out.println(listado);
-		a.setNombre("Luisni");
+		a.setNombre("Luismi");
 		System.out.println(listado);
 		
 

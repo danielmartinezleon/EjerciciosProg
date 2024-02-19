@@ -44,6 +44,18 @@ public class CrudAlumno {
 		
 	}
 	
+	public Alumno findByIDV2(int id) {
+		if (listado.size() != 0) {
+			for (Alumno alumno : listado) {
+				if(alumno.getId() == id) {
+					return alumno;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
 	public void mostrarAlumno(int id) {
 		if(findByID(id) != null) {
 			System.out.println(findByID(id));
