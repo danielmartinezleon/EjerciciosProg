@@ -58,13 +58,14 @@ public class Agenda {
 		}
 	}
 	
-<<<<<<< HEAD
+
 	public void mostrarLista() {
 		Iterator<Integer> itr = listado.values().iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
-=======
+	}
+
 	public void imprimirAgenda() {
         System.out.println("AGENDA:");
         for (Map.Entry<Contacto, Integer> entry : listado.entrySet()) {
@@ -81,7 +82,7 @@ public class Agenda {
 		}else {
 			System.out.println("El contacto "+nombre+" no existe en la agenda");
 		}
->>>>>>> 9cfe908fac2090944ab76794be40940c1636184e
+
 	}
 
 }
