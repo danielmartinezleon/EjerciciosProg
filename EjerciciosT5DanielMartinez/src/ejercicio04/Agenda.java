@@ -57,22 +57,16 @@ public class Agenda {
 			System.out.println("El contacto "+nombre+" no existe en la agenda");
 		}
 	}
-	
-
-	public void mostrarLista() {
-		Iterator<Integer> itr = listado.values().iterator();
-        while (itr.hasNext()) {
-            System.out.println(itr.next());
-        }
-	}
 
 	public void imprimirAgenda() {
         System.out.println("AGENDA:");
+        System.out.println("-".repeat(40));
         for (Map.Entry<Contacto, Integer> entry : listado.entrySet()) {
             Contacto contacto = entry.getKey();
             Integer telefono = entry.getValue();
             System.out.println("Nombre: " + contacto.getNombre() + ", Teléfono: " + telefono);
         }
+        System.out.println("-".repeat(40));
     }
 	
 	public void imprimirUnContacto(String nombre) {

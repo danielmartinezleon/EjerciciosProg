@@ -33,22 +33,7 @@ public class Contacto {
 		return "Contacto [nombre=" + nombre + ", telefono=" + telefono + "]";
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(nombre, telefono);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Contacto other = (Contacto) obj;
-		return Objects.equals(nombre, other.nombre) && telefono == other.telefono;
-	}
+	
 	
 	
 

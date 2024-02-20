@@ -18,8 +18,8 @@ public class Ppal {
 		Agenda a = new Agenda(listado);
 		
 		a.agregar(new Contacto("Daniel", 637651990), 637651990);
-		a.agregar(new Contacto("Nuria", 648971805), 648971805);
-		a.agregar(new Contacto("Aron", 664551419), 664551419);
+		a.agregar(new Contacto("Angel", 656123456), 656123456);
+		a.agregar(new Contacto("Luismi", 678909888), 678909888);
 		
 		System.out.println("Bienvenido a la agenda telefónica");
 		do {
