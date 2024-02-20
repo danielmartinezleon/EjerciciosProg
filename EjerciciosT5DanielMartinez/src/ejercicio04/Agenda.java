@@ -1,5 +1,6 @@
 package ejercicio04;
 
+import java.util.Iterator;
 import java.util.Map;
 
 public class Agenda {
@@ -45,6 +46,9 @@ public class Agenda {
 	}
 	
 	public void mostrarLista() {
-		
+		Iterator<Integer> itr = listado.values().iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
 	}
 }
