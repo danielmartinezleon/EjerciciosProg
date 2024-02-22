@@ -1,6 +1,8 @@
 package ejercicio04;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class Agenda {
@@ -24,6 +26,7 @@ public class Agenda {
 		return "Agenda [listado=" + listado + "]";
 	}
 	
+	//Devolver alguna lista mejor
 	public Contacto findByNombre(String nombre) {
         for (Contacto contacto : listado.keySet()) {
             if (contacto.getNombre().equalsIgnoreCase(nombre)) {
@@ -31,6 +34,16 @@ public class Agenda {
             }
         }
         return null;
+    }
+	
+	public List<Contacto> findByNombreV2(String nombre) {
+        List<Contacto> aux= new ArrayList<Contacto>();
+		for (Contacto contacto : listado.keySet()) {
+            if (contacto.getNombre().equalsIgnoreCase(nombre)) {
+                aux.add(contacto);
+            }
+        }
+        return aux;
     }
 
 	public void agregar(Contacto c, int t) {
@@ -41,10 +54,11 @@ public class Agenda {
         Contacto contacto = findByNombre(nombre);
         if (contacto != null) {
             contacto.setNombre(nuevoNombre);
-            System.out.println("El nombre de " + nombre + " ha cambiado a " + nuevoNombre);
+        }
+            /*System.out.println("El nombre de " + nombre + " ha cambiado a " + nuevoNombre);
         } else {
             System.out.println("El contacto con el nombre " + nombre + " no existe en la agenda.");
-        }
+        }*/
     }
 	
 	public void eliminarContacto(String nombre) {
@@ -52,18 +66,19 @@ public class Agenda {
 		Contacto contacto = findByNombre(nombre);
 		if (contacto != null) {
 			listado.remove(contacto);
-			System.out.println("Contacto eliminado");
+		}
+			/*System.out.println("Contacto eliminado");
 		}else {
 			System.out.println("El contacto "+nombre+" no existe en la agenda");
-		}
+		}*/
 	}
 
 	public void imprimirAgenda() {
         System.out.println("AGENDA:");
         System.out.println("-".repeat(40));
-        for (Map.Entry<Contacto, Integer> entry : listado.entrySet()) {
-            Contacto contacto = entry.getKey();
-            Integer telefono = entry.getValue();
+        for (Map.Entry<Contacto, Integer> entrada : listado.entrySet()) {
+            Contacto contacto = entrada.getKey();
+            int telefono = entrada.getValue();
             System.out.println("Nombre: " + contacto.getNombre() + ", Teléfono: " + telefono);
         }
         System.out.println("-".repeat(40));

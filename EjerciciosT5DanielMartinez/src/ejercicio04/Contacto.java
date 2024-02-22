@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Contacto {
 	
 	private String nombre;
-	private int telefono;
+	private int telefono; 
 	
 	public Contacto(String nombre, int telefono) {
 		this.nombre = nombre;
