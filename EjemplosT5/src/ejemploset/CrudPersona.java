@@ -39,4 +39,10 @@ public class CrudPersona {
 			System.out.println("Persona no disponible");
 		}
 	}
+	
+	public void imprimirLista() {
+		for (Persona persona : listado) {
+			System.out.println(persona);
+		}
+	}
 }

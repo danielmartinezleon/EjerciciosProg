@@ -13,9 +13,9 @@ public class Ppal {
 		lista.add(new Persona("Fran", "123456789A", 25));
 		lista.add(new Persona("Nydia", "987654321B", 23));
 		
-		System.out.println(lista);
+		c.imprimirLista();
 		
-		c.imprimirPersona(c.findByDni("987654321B"));
+		//c.imprimirPersona(c.findByDni("987654321B"));
 		
 
 	}
