@@ -28,16 +28,16 @@ public class Gestion {
 	}
 	
 	public List<String> ordenarAlfabeticamente(){
-		List<String> listaOrdenada = lista.stream()
+		lista = lista.stream()
 				.sorted().collect(Collectors.toList());
 		
-		return listaOrdenada;
+		return lista;
 	}
 	
 	public String findByTexto(String texto) {
 		
 		return lista.stream()
-                .filter(s -> s.contains(texto))
+                .filter(s -> s.equalsIgnoreCase(texto))
                 .findFirst()
                 .orElse(null);
 	}
@@ -51,17 +51,15 @@ public class Gestion {
 	}
 	
 	public void borrarImpares() {
-		lista.stream()
-                .flatMap(s -> List.of(s.split("\\s+")).stream())
-                .filter(s -> s.length() % 2 == 0)
-                .collect(Collectors.toList());
+	    lista = lista.stream()
+	                 .filter(s -> s.length() % 2 == 0)
+	                 .collect(Collectors.toList());
 	}
 	
 	public void pasarAMayus() {
-		lista.stream()
-        .flatMap(s -> List.of(s.split("\\s+")).stream())
-        .map(String::toUpperCase)
-        .collect(Collectors.toList());
+	    lista = lista.stream()
+	                 .map(String::toUpperCase)
+	                 .collect(Collectors.toList());
 	}
 	
 	public void mostrarLista(List<String> listado) {
