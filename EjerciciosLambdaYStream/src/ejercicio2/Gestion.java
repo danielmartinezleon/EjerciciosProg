@@ -28,17 +28,12 @@ public class Gestion {
 	}
 	
 	public List<String> ordenarAlfabeticamente(){
-<<<<<<< HEAD
-			
 		
-		return lista.stream()
-				.sorted().collect(Collectors.toList());
-=======
 		lista = lista.stream()
 				.sorted().collect(Collectors.toList());
 		
 		return lista;
->>>>>>> refs/remotes/origin/main
+
 	}
 	
 	public String findByTexto(String texto) {
