@@ -47,7 +47,7 @@ public class Gestion {
 	public String crearPalabra() {
 		
 		return lista.stream()
-                .flatMap(s -> List.of(s.split("\\s+")).stream())
+                .flatMap(s -> List.of(s.split("\s+")).stream())
                 .map(s -> s.substring(0, 1))
                 .collect(Collectors.joining());
 	}
