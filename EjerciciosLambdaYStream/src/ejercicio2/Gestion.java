@@ -28,16 +28,23 @@ public class Gestion {
 	}
 	
 	public List<String> ordenarAlfabeticamente(){
+<<<<<<< HEAD
 			
 		
 		return lista.stream()
 				.sorted().collect(Collectors.toList());
+=======
+		lista = lista.stream()
+				.sorted().collect(Collectors.toList());
+		
+		return lista;
+>>>>>>> refs/remotes/origin/main
 	}
 	
 	public String findByTexto(String texto) {
 		
 		return lista.stream()
-                .filter(s -> s.contains(texto))
+                .filter(s -> s.equalsIgnoreCase(texto))
                 .findFirst()
                 .orElse(null);
 	}
@@ -51,17 +58,15 @@ public class Gestion {
 	}
 	
 	public void borrarImpares() {
-		lista.stream()
-                .flatMap(s -> List.of(s.split("\\s+")).stream())
-                .filter(s -> s.length() % 2 == 0)
-                .collect(Collectors.toList());
+	    lista = lista.stream()
+	                 .filter(s -> s.length() % 2 == 0)
+	                 .collect(Collectors.toList());
 	}
 	
 	public void pasarAMayus() {
-		lista.stream()
-        .flatMap(s -> List.of(s.split("\\s+")).stream())
-        .map(String::toUpperCase)
-        .collect(Collectors.toList());
+	    lista = lista.stream()
+	                 .map(String::toUpperCase)
+	                 .collect(Collectors.toList());
 	}
 	
 	public void mostrarLista(List<String> listado) {
